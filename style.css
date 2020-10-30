@@ -54,8 +54,29 @@ header {
   animation: 1s ease-in-out infinite animationButton;
 }
 
+.container-buttons {
+  display: none;
+  flex-direction: row;
+  margin-top: 30px;
+}
+
+.btn-easy-level,
+.btn-medium-level,
+.btn-hard-level {
+  cursor: pointer;
+  margin-right: 20px;
+  border-radius: 5px;
+  background-color: #81caa8;
+  color: #161616;
+  width: 100px;
+  height: 30px;
+  font-size: 19px;
+  border: none;
+  outline: none;
+  font-weight: 600;
+}
+
 .container-balloons {
-  position: fixed;
   width: 100vw;
   height: 100vh;
   top: 0;
