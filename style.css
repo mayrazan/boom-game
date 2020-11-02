@@ -88,3 +88,24 @@ header {
   cursor: url("./assets/alfinete.png"), auto;
   position: absolute;
 }
+
+.count-ballons {
+  color: white;
+  display: flex;
+  float: right;
+  justify-content: flex-end;
+  margin: 30px 70px;
+  font-size: large;
+  font-weight: 700;
+}
+
+.game-lost {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-over {
+  color: white;
+  font-size: 30px;
+}
