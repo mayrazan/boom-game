@@ -89,14 +89,21 @@ header {
   position: absolute;
 }
 
-.count-ballons {
+.count-balloons {
   color: white;
   display: flex;
   float: right;
   justify-content: flex-end;
+  flex-direction: column;
   margin: 30px 70px;
   font-size: large;
   font-weight: 700;
+}
+
+.counter-removed, .counter-balloons {
+  display: flex;
+  flex-direction: row;
+  white-space: pre;
 }
 
 .game-lost {

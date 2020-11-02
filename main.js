@@ -3,8 +3,9 @@ const divButtons = document.querySelector(".container-buttons");
 const buttonEasy = document.querySelector(".btn-easy-level");
 const buttonMedium = document.querySelector(".btn-medium-level");
 const buttonHard = document.querySelector(".btn-hard-level");
-const counter = document.querySelector(".count-ballons");
+const counter = document.querySelector(".counter-balloons");
 let count = 0;
+let poppedBallon = 0;
 
 buttonInitGame.addEventListener("click", function () {
   buttonInitGame.remove();
@@ -64,6 +65,8 @@ function createBalloon() {
 
   elementImg.addEventListener("click", function () {
     removeBalloon(this);
+    poppedBallon += 1;
+    ballonPoints(poppedBallon);
   });
 
   balloonsContainer.appendChild(elementImg);
@@ -79,14 +82,14 @@ function removeBalloon(element) {
 }
 
 const elementCounter = document.createElement("p");
-counter.appendChild(elementCounter);
 
 function countBalloons(value) {
   elementCounter.innerHTML = "";
   if (value <= 100) {
     elementCounter.append(value);
+    return counter.appendChild(elementCounter);
   } else {
-    return gameOver();
+    gameOver();
   }
 }
 
@@ -98,4 +101,15 @@ function gameOver() {
   textGameOver.setAttribute("class", "game-over");
   textGameOver.textContent = "You lose! Game Over.";
   sectionGameLost.appendChild(textGameOver);
+}
+
+const balloonRemoved = document.querySelector(".counter-removed");
+const popped = document.createElement("p");
+
+function ballonPoints(value) {
+  popped.innerHTML = "";
+  if (value) {
+    popped.append(poppedBallon);
+    return balloonRemoved.appendChild(popped);
+  }
 }
